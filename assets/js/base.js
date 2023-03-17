@@ -500,7 +500,7 @@ function AddtoHome(time, once) {
 
 //-----------------------------------------------------------------------
 // Dark Mode
-var checkDarkModeStatus = localStorage.getItem("FinappDarkmode");
+var checkDarkModeStatus = localStorage.getItem("Darkmode");
 var switchDarkMode = document.querySelectorAll(".dark-mode-switch");
 var pageBodyActive = pageBody.classList.contains("dark-mode");
 
@@ -547,17 +547,17 @@ else {
 }
 switchDarkMode.forEach(function (el) {
     el.addEventListener("click", function () {
-        var darkmodeCheck = localStorage.getItem("FinappDarkmode");
+        var darkmodeCheck = localStorage.getItem("Darkmode");
         var bodyCheck = pageBody.classList.contains('dark-mode');
         if (darkmodeCheck === 1 || darkmodeCheck === "1" || bodyCheck) {
             pageBody.classList.remove("dark-mode");
-            localStorage.setItem("FinappDarkmode", "0");
+            localStorage.setItem("Darkmode", "0");
             switchDarkModeCheck(false);
         }
         else {
             pageBody.classList.add("dark-mode")
             switchDarkModeCheck(true);
-            localStorage.setItem("FinappDarkmode", "1");
+            localStorage.setItem("Darkmode", "1");
         }
     })
 })
